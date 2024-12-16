@@ -27,7 +27,7 @@ const puppeteer = require('puppeteer');
     await page.goto('https://www.facebook.com');
 
     // Chờ một chút và chụp màn hình
-    await page.waitForTimeout(3000);
+    await new Promise(resolve => setTimeout(resolve, 5000)); // Chờ 5 giây
     await page.screenshot({ path: 'screenshot.png' });
 
     console.log('Đã hoàn thành!');
